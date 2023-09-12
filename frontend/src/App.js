@@ -1,11 +1,17 @@
 import React from "react";
-import LoginPage from "./Login";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from "./Login";
+import Home from './Home';
+import "./firebase";  
 
 function App() {
   return (
-    <div className="App">
-      <LoginPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} /> {/* Login コンポーネントへのルーティング */}
+        <Route path="/home" element={<Home />} /> {/* Home コンポーネントへのルーティング */}
+      </Routes>
+    </Router>
   );
 }
 

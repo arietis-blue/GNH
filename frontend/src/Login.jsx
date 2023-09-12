@@ -1,7 +1,11 @@
+import React from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
+import { useNavigate } from 'react-router-dom'; 
+// import { auth } from './firebase';
+
 
 const Login = () => {
+  const navigate = useNavigate(); 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
@@ -10,6 +14,7 @@ const Login = () => {
       const userCredential = await signInWithEmailAndPassword(getAuth(), email.value, password.value);
       const user = userCredential.user;
       console.log("Logged in as:", user.email);
+      navigate('/home'); 
     } catch (error) {
       console.log("Error:", error.message);
     }
@@ -29,9 +34,6 @@ const Login = () => {
         </div>
         <div>
           <button type="submit">ログイン</button>
-        </div>
-        <div>
-          {/* ユーザ登録は<Link to={'/signup'}>こちら</Link>から */}
         </div>
       </form>
     </div>
