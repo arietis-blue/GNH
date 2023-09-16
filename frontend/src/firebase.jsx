@@ -19,4 +19,4 @@ const app = initializeApp(firebaseConfig);
 // Auth インスタンスの取得
 const auth = getAuth();
 
-export { auth };
+export { auth, app };
