@@ -15,7 +15,7 @@ const Login = () => {
       const userCredential = await signInWithEmailAndPassword(getAuth(), email.value, password.value);
       const user = userCredential.user;
       console.log("Logged in as:", user.email);
-      navigate('/');
+      navigate('/admin');
       setShowModal(false);
     } catch (error) {
       console.log("Error:", error.message);

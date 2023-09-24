@@ -8,20 +8,26 @@ import {
 import Header from './Header'; 
 import Footer from './Footer'; 
 import GoogleMapComponent from './Map';
+import Register from './Register';
+
 
 // http://localhost:3000
 
-// function Home() {
-//   return <h2>Home</h2>;
-// }
+function Home() {
+  return (
+      <GoogleMapComponent />
+  );
+}
 
 // function About() {
 //   return <h2>Restaurant</h2>;
 // }
 
-// function Projects() {
-//   return <h2>Morning</h2>;
-// }
+function Admin() {
+  return (
+      <Register />
+  );
+}
 
 function App() {
 
@@ -40,12 +46,11 @@ function App() {
       <div className="bg-white h-screen flex flex-col">
         <Header />  
         <main className="flex-grow p-5  text-black">
-          {/* <Routes>
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+          <Routes>
+            <Route path="/admin" element={<Admin />} />
+            {/* <Route path="/projects" element={<Projects />} /> */}
             <Route path="/" element={<Home />} />
-          </Routes> */}
-          <GoogleMapComponent />
+          </Routes>
         </main>
         <Footer />  
       </div>
